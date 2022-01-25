@@ -1,19 +1,28 @@
 .form {
-  display: flex;
-  background-color: rgb(100 100 100);
-  padding: 1rem;
+  display: grid;
   justify-content: center;
+  align-items: center;
+  background-color: rgb(100 100 100);
+  height: 6vh;
+  position: sticky;
+  top: 0;
+  width: 100%;
 }
 
 .form input {
   border: none;
-  border-radius: 0 20px 20px 0;
   outline: none;
-  width: 100%;
+  width: 80vw;
+  padding-left: 35px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 15px;
+  position: relative;
 }
 
 .icon {
-  background: white;
-  padding: 0.4rem;
-  border-radius: 20px 0 0 20px;
+  position: absolute;
+  z-index: 1;
+  padding-left: 10px;
+  padding-top: 4px;
 }
