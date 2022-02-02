@@ -6,7 +6,7 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Countries />} />
-      <Route path="/:name" element={<Leagues />} />
+      <Route path="/:country/leagues" element={<Leagues />} />
     </Routes>
   );
 }

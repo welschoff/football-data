@@ -24,7 +24,7 @@ function Leagues() {
     <div>
       {leagues?.map((league) => (
         <LeagueCard
-          key={league.country}
+          key={league.league_id}
           name={league.name}
           logo={league.logo}
         />

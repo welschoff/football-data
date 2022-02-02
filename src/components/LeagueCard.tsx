@@ -1,7 +1,7 @@
 import styles from './LeagueCard.module.css';
 
 export type LeagueCardProps = {
-  country?: string;
+  league_id?: string;
   name: string;
   logo: string;
 };

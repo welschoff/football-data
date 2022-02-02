@@ -45,7 +45,7 @@ function Countries() {
 
       <div>
         {output?.map((item: { name: string; flag: string }) => (
-          <Link to={`/${item.name}`} key={item.name}>
+          <Link to={`/${item.name}/leagues`} key={item.name}>
             <CountryCard flag={item.flag} name={item.name} />
           </Link>
         ))}
