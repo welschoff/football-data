@@ -1,22 +1,13 @@
-import { useEffect, useState } from 'react';
+import Leagues from './pages/Leagues';
+import { Route, Routes } from 'react-router-dom';
+import Countries from './pages/Countries';
 
 function App() {
-  const [message, setMessage] = useState('');
-
-  useEffect(() => {
-    async function doFetch() {
-      const response = await fetch('/api/hello');
-      const result = await response.json();
-      setMessage(result.message);
-    }
-    doFetch();
-  }, []);
-
   return (
-    <div>
-      <p>Hello Vite + React!</p>
-      <p>{message}</p>
-    </div>
+    <Routes>
+      <Route path="/" element={<Countries />} />
+      <Route path="/:name" element={<Leagues />} />
+    </Routes>
   );
 }
 

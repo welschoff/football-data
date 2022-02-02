@@ -10,6 +10,23 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
+app.get('/api/leagues/:country', async (req, res) => {
+  const country = req.params.country;
+
+  const response = await fetch(
+    `https://api-football-v1.p.rapidapi.com/v2/leagues/country/${country}`,
+    {
+      headers: {
+        'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
+        'x-rapidapi-key': `${process.env.API_KEY}`,
+      },
+    }
+  );
+  const data = await response.json();
+  console.log(data);
+  res.send(data.api.leagues);
+});
+
 app.get('/api/leagues', async (_req, res) => {
   const response = await fetch(
     'https://api-football-v1.p.rapidapi.com/v3/leagues',
