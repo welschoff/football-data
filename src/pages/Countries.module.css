@@ -1,0 +1,28 @@
+.form {
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(100 100 100);
+  height: 6vh;
+  position: sticky;
+  top: 0;
+  width: 100%;
+}
+
+.form input {
+  border: none;
+  outline: none;
+  width: 80vw;
+  padding-left: 35px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 15px;
+  position: relative;
+}
+
+.icon {
+  position: absolute;
+  z-index: 1;
+  padding-left: 10px;
+  padding-top: 4px;
+}
