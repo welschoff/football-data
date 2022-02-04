@@ -1,27 +1,30 @@
 import { useEffect, useState } from 'react';
 import LeagueCard, { LeagueCardProps } from '../components/LeagueCard';
 import { useParams } from 'react-router-dom';
+import styles from './Leagues.module.css';
 
 function Leagues() {
   const { country } = useParams();
   const [leagues, setLeagues] = useState<LeagueCardProps[]>([]);
 
-  const getLeagues = async () => {
-    const response = await fetch(
-      `http://localhost:3001/api/leagues/${country}`
-    );
-    const data = await response.json();
-    console.log(response.url);
-    console.log(data);
-    setLeagues(data);
-  };
-
   useEffect(() => {
+    const getLeagues = async () => {
+      const response = await fetch(
+        `http://localhost:3001/api/leagues/${country}`
+      );
+      const data = await response.json();
+      const sortArray = await data.sort(function (a: any, b: any) {
+        if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) return -1;
+      });
+      console.log(data);
+      setLeagues(sortArray);
+    };
     getLeagues();
   }, []);
 
   return (
-    <div>
+    <div className={styles.container}>
+      <h2>Wettbewerbe</h2>
       {leagues?.map((league) => (
         <LeagueCard
           key={league.league_id}
