@@ -14,7 +14,7 @@ app.get('/api/leagues/:country', async (req, res) => {
   const country = req.params.country;
 
   const response = await fetch(
-    `https://api-football-v1.p.rapidapi.com/v2/leagues/country/${country}`,
+    `https://api-football-v1.p.rapidapi.com/v2/leagues/current/${country}`,
     {
       headers: {
         'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
