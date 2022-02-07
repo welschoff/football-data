@@ -57,6 +57,56 @@ app.get('/api/countries', async (_req, res) => {
   res.send(data.response);
 });
 
+app.get('/api/rounds/:id', async (req, res) => {
+  const id = req.params.id;
+  const response = await fetch(
+    `https://api-football-v1.p.rapidapi.com/v2/fixtures/rounds/${id}`,
+    {
+      headers: {
+        'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
+        'x-rapidapi-key': `${process.env.API_KEY}`,
+      },
+    }
+  );
+  const data = await response.json();
+  console.log(data);
+  res.send(data.api.fixtures);
+});
+
+app.get('/api/rounds/:id/:round', async (req, res) => {
+  const id = req.params.id;
+  const round = req.params.round;
+  const response = await fetch(
+    `https://api-football-v1.p.rapidapi.com/v2/fixtures/league/${id}/${round}`,
+    {
+      headers: {
+        'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
+        'x-rapidapi-key': `${process.env.API_KEY}`,
+      },
+    }
+  );
+  const data = await response.json();
+  console.log(data);
+  res.send(data.api.fixtures);
+});
+
+app.get('/api/rounds/:id/:number', async (req, res) => {
+  const id = req.params.id;
+  const number = req.params.number;
+  const response = await fetch(
+    `https://api-football-v1.p.rapidapi.com/v2/fixtures/league/${id}/next/${number}`,
+    {
+      headers: {
+        'x-rapidapi-host': 'api-football-v1.p.rapidapi.com',
+        'x-rapidapi-key': `${process.env.API_KEY}`,
+      },
+    }
+  );
+  const data = await response.json();
+  console.log(data);
+  res.send(data.api.fixtures);
+});
+
 app.get('/api/hello', (_request, response) => {
   response.json({ message: 'Hello from server' });
 });

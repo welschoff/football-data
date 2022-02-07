@@ -1,0 +1,14 @@
+.match {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 5vh;
+  margin: 0.5rem;
+}
+
+.match img {
+  height: 10%;
+}
+
+.score {
+  justify-self: center;
+}
