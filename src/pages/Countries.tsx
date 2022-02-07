@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import CountryCard, { CountryCardProps } from '../components/CountryCard';
 import { FaSearch } from 'react-icons/fa';
 import styles from './Countries.module.css';
+import { Link } from 'react-router-dom';
 
 function Countries() {
   const [countries, setCountries] = useState<CountryCardProps[]>([]);
@@ -44,7 +45,13 @@ function Countries() {
 
       <div>
         {output?.map((item: { name: string; flag: string }) => (
-          <CountryCard key={item.name} flag={item.flag} name={item.name} />
+          <Link
+            style={{ textDecoration: 'none' }}
+            to={`/${item.name}/leagues`}
+            key={item.name}
+          >
+            <CountryCard flag={item.flag} name={item.name} />
+          </Link>
         ))}
       </div>
     </>

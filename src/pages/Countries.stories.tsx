@@ -1,4 +1,4 @@
-import Countries from './Countries';
+import Countries from './Leagues';
 
 export default {
   component: Countries,
