@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react';
-import Matchdays from '../components/Matchdays';
 import Results, { ResultsProps } from '../components/Results';
 
-function Standings() {
+function Statistics() {
   const [matchdays, setMatchdays] = useState<string[] | null>(null);
   const [results, setResults] = useState<ResultsProps[] | null>(null);
 
@@ -48,4 +47,4 @@ function Standings() {
   );
 }
 
-export default Standings;
+export default Statistics;

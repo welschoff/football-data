@@ -13,7 +13,10 @@ function Leagues() {
         `http://localhost:3001/api/leagues/${country}`
       );
       const data = await response.json();
-      const sortArray = await data.sort(function (a: any, b: any) {
+      const sortArray = await data.sort(function (
+        a: { name: string },
+        b: { name: string }
+      ) {
         if (a.name.toLocaleLowerCase() < b.name.toLocaleLowerCase()) return -1;
       });
       console.log(data);
