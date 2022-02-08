@@ -1,4 +1,4 @@
-import Leagues from './Leagues';
+import Leagues from './Statistics';
 
 export default {
   component: Leagues,

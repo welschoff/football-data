@@ -5,3 +5,11 @@ GET http://localhost:3001/api/leagues HTTP/1.1
 ### GET a specific leagues
 
 GET http://localhost:3001/api/leagues/Germany HTTP/1.1
+
+### GET Matchdays
+
+GET http://localhost:3001/api/rounds/2 HTTP/1.1
+
+### GET Results from a specific Matchday
+
+GET http://localhost:3001/api/rounds/2/Regular_Season_-_1 HTTP/1.1
