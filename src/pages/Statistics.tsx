@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import Results, { ResultsProps } from '../components/Results';
+import styles from './Statistics.module.css';
 
 function Statistics() {
   const [matchdays, setMatchdays] = useState<string[] | null>(null);
@@ -33,12 +34,13 @@ function Statistics() {
           <option key={matchday}>{matchday}</option>
         ))}
       </select>
-      <div>
+      <div className={styles.results}>
         {results?.map((result) => (
           <Results
             key={result.fixture_id}
             homeTeam={result.homeTeam}
-            score={result.score}
+            goalsHomeTeam={result.goalsHomeTeam}
+            goalsAwayTeam={result.goalsAwayTeam}
             awayTeam={result.awayTeam}
           />
         ))}

@@ -1,4 +1,4 @@
-import Leagues from './pages/Leagues';
+import Leagues from './pages/Statistics';
 import { Route, Routes } from 'react-router-dom';
 import Countries from './pages/Countries';
 import Statistics from './pages/Statistics';

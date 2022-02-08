@@ -1,14 +1,22 @@
-.match {
+.teams {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  height: 5vh;
-  margin: 0.5rem;
+  grid-template-rows: 1fr 1fr;
+  padding: 0.5rem;
+  row-gap: 0.5rem;
 }
 
-.match img {
-  height: 10%;
+.teams img {
+  width: 5%;
+  object-fit: cover;
+  margin-right: 0.5rem;
 }
 
-.score {
-  justify-self: center;
+.home {
+  display: flex;
+  justify-content: space-between;
+}
+
+.away {
+  display: flex;
+  justify-content: space-between;
 }
